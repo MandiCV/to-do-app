@@ -19,18 +19,13 @@ export class AppComponent implements OnInit{
   }
 
   login(){
-    const user = {email: this.email, pass: this.password};
-    this.userService.signIn(user).subscribe(
-      (loggedUser) => {
+    const user = {pass: this.password,email: this.email};
+
+    this.userService.signIn(user).subscribe(loggedUser =>{
         this.userService.setToken(loggedUser.token);
         console.log("Login correcto");
         console.log(loggedUser.token);
-      },
-      (err) => {
-        console.error("Error en el login");
-        console.error(err);
-      }
-    );
+      });
   }
 
 }
