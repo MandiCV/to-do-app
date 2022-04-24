@@ -20,8 +20,7 @@ export class AppComponent implements OnInit{
 
   login(){
     const user = {email: this.email, password: this.password};
-    console.log(user);
-
+    
     this.userService.signIn(user).subscribe(
       (loggedUser) => {
         this.userService.setToken(loggedUser.token);
