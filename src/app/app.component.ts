@@ -12,10 +12,15 @@ export class AppComponent implements OnInit{
   email: string = 'test';
   password: string = 'test';
 
+  displayName = '';
+
   constructor(public userService: UserService) {}
 
   ngOnInit() {
     this.login();
+    this.userService.getUser().subscribe(
+      user => {this.displayName = user.displayName
+      });
   }
 
   login(){
