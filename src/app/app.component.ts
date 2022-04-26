@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.login();
     this.userService.getUser().subscribe(
-      user => {this.displayName = user.displayName
+      user => {this.displayName = user.usuario.nombre
       });
   }
 
