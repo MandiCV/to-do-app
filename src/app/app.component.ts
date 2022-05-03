@@ -9,8 +9,8 @@ import { UserService } from './services/user.service';
 export class AppComponent implements OnInit{
   title = 'toDoApp for SD';
 
-  email: string = 'test';
-  password: string = 'test';
+  email: string = 'susanacv009@gmail.com';
+  password: string = '1234SCV';
 
   displayName = '';
 
@@ -20,6 +20,7 @@ export class AppComponent implements OnInit{
     this.login();
     this.userService.getUser().subscribe(
       user => {this.displayName = user.usuario.nombre
+        console.log(user);
       });
   }
 
